@@ -1,0 +1,1 @@
+add_executable(zombie main.cpp Zombie.cpp newZombie.cpp randomChump.cpp)

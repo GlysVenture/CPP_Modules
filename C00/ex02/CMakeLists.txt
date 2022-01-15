@@ -1,0 +1,1 @@
+add_executable(accounts tests.cpp Account.cpp)
