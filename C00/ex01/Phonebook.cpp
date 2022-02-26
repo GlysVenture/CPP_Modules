@@ -16,8 +16,9 @@ Phonebook::~Phonebook()
 
 void	Phonebook::add()
 {
-	if (this->num >= PH_SIZE) {
-		std::cout << "Phonebook full, failed adding new contact" << std::endl;
+	if (this->num == PH_SIZE) {
+		this->contacts[this->num - 1].from_input();
+		std::cout << "contact smashed and added successfully" << std::endl;
 		return ;
 	}
 	this->contacts[this->num].from_input();
@@ -35,17 +36,28 @@ void	Phonebook::search()
 		std::cout << "Phonebook empty" << std::endl;
 		return ;
 	}
-	tries = -1;
-	while (++tries < 3) {
-		this->print_tab();
-		std::cout << "please enter index:" << std::endl;
-		std::getline(std::cin, line);
-		index = std::stoi(line);
+	line = "0";
+	tries = 0;
+	do {
+		try
+		{
+			index = std::stoi(line);
+		}
+		catch (...)
+		{
+			std::cout << "Error: invalid index" << std::endl;
+			index = 0;
+		}
 		if (0 < index && index <= this->num) {
 			this->contacts[index - 1].print();
 			return ;
 		}
-	}
+		if (++tries > 3)
+			return;
+		this->print_tab();
+		std::cout << "please enter index:" << std::endl;
+		std::cout << "try" << tries << std::endl;
+	} while (std::getline(std::cin, line) );
 	std::cout << "tries exhausted" << std::endl;
 }
 

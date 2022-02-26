@@ -11,8 +11,7 @@ int	main(int argc, char **argv)
 	std::string	buffer;
 
 	std::cout << "$>";
-	std::getline(std::cin, buffer);
-	while (buffer != "EXIT")
+	while (std::getline(std::cin, buffer) && buffer != "EXIT")
 	{
 		if (buffer == "ADD")
 			book.add();
@@ -21,6 +20,6 @@ int	main(int argc, char **argv)
 		else
 			std::cout << "command: " << buffer << " not found" << std::endl;
 		std::cout << "$>";
-		std::getline(std::cin, buffer);
 	}
+	std::cout << "EXIT" << std::endl;
 }
