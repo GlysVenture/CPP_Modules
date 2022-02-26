@@ -25,10 +25,16 @@ Fixed & Fixed::operator=(const Fixed &rhs) {
 Fixed::~Fixed() { }
 
 std::string Fixed::toString() const {
-	return std::to_string(this->_val >> Fixed::bits)
-		+ "."
-		+ std::to((this->_val & ((int)pow(2, Fixed::bits) - 1)), "0") //todo
-		+ std::to_string(390625 * this->_val & ((int)pow(2, Fixed::bits) - 1));
+	std::string digits = std::to_string((int)pow(10 / 2, Fixed::bits) * (abs(this->_val) & ((int)pow(2, Fixed::bits) - 1)));
+	std::string all;
+	for (int i = Fixed::bits - digits.length(); i > 0 ; i--) { all += "0"; }
+	digits = std::to_string(abs(this->_val) >> Fixed::bits)
+			 + "."
+			 + all
+			 + digits;
+	if (this->_val < 0)
+		digits = "-" + digits;
+	return digits;
 }
 
 int	Fixed::getRawBits() const {

@@ -7,7 +7,7 @@ int	main() {
 
 	std::cout << c << std::endl;
 	std::cout << d << std::endl;
-	d.setRawBits(1);
+	d.setRawBits(255);
 	std::cout << d << std::endl;
 	std::cout << c + d << std::endl;
 	return (0);
