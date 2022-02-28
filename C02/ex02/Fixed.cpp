@@ -57,6 +57,32 @@ int Fixed::toInt() const {
 	return this->_val >> Fixed::bits;
 }
 
+//Max min
+
+Fixed & Fixed::min(Fixed &a, Fixed &b) {
+	if (a < b)
+		return a;
+	return b;
+}
+
+Fixed & Fixed::max(Fixed &a, Fixed &b) {
+	if (a > b)
+		return a;
+	return b;
+}
+
+Fixed const & Fixed::min(const Fixed &a, const Fixed &b) {
+	if (a < b)
+		return a;
+	return b;
+}
+
+Fixed const & Fixed::max(const Fixed &a, const Fixed &b) {
+	if (a > b)
+		return a;
+	return b;
+}
+
 //Operator overloads
 
 Fixed Fixed::operator+(const Fixed &rhs) const {
@@ -67,13 +93,12 @@ Fixed Fixed::operator+(const Fixed &rhs) const {
 
 Fixed Fixed::operator*(const Fixed &rhs) const {
 	Fixed	temp;
-	temp.setRawBits(this->_val * rhs._val);
+	temp.setRawBits((this->_val * rhs._val) / (int) powf(2, Fixed::bits));
 	return temp;
 }
 
 Fixed Fixed::operator/(const Fixed &rhs) const {
-	Fixed	temp;
-	temp.setRawBits(this->_val / rhs._val);
+	Fixed	temp((float)this->_val / (float)rhs._val );
 	return temp;
 }
 
@@ -109,25 +134,25 @@ bool Fixed::operator!=(const Fixed &rhs) const {
 
 Fixed Fixed::operator++() {
 	Fixed	temp;
-	temp.setRawBits(this->_val++);
+	temp.setRawBits(++this->_val);
 	return temp;
 }
 
 Fixed Fixed::operator--() {
 	Fixed	temp;
-	temp.setRawBits(this->_val--);
+	temp.setRawBits(--this->_val);
 	return temp;
 }
 
 Fixed Fixed::operator++(int ) {
 	Fixed	temp;
-	temp.setRawBits(++this->_val);
+	temp.setRawBits(this->_val++);
 	return temp;
 }
 
 Fixed Fixed::operator--(int) {
 	Fixed	temp;
-	temp.setRawBits(--this->_val);
+	temp.setRawBits(this->_val++);
 	return temp;
 }
 

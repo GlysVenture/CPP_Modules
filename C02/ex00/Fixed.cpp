@@ -7,22 +7,28 @@
 
 Fixed::Fixed() {
 	this->_val = 0;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(int val){
 	this->_val = val << Fixed::bits;
+	std::cout << "Value constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed & inst) {
+	std::cout << "Copy constructor called" << std::endl;
 	*this = inst;
 }
 
 Fixed & Fixed::operator=(const Fixed &rhs) {
-	this->_val = rhs._val;
+	std::cout << "Copy assignement operator called" << std::endl;
+	this->_val = rhs.getRawBits();
 	return (*this);
 }
 
-Fixed::~Fixed() { }
+Fixed::~Fixed() {
+	std::cout << "Destructor called" << std::endl;
+}
 
 std::string Fixed::toString() const {
 	std::string digits = std::to_string((int)pow(10 / 2, Fixed::bits) * (abs(this->_val) & ((int)pow(2, Fixed::bits) - 1)));
@@ -38,6 +44,7 @@ std::string Fixed::toString() const {
 }
 
 int	Fixed::getRawBits() const {
+	std::cout << "getRawBits member function called" << std::endl;
 	return this->_val;
 }
 

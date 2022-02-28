@@ -1,1 +1,1 @@
-add_executable(fixed01 main.cpp Fixed.cpp)
+add_executable(fixed02 main.cpp Fixed.cpp)

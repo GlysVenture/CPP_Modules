@@ -36,7 +36,12 @@ public:
 	int			toInt() const;
 	std::string	toString() const;
 	int			getRawBits() const;
-	void		setRawBits(int const val);
+	void		setRawBits(int val);
+
+	static Fixed &min(Fixed &a, Fixed &b);
+	static Fixed &max(Fixed &a, Fixed &b);
+	static Fixed const &min(const Fixed &a, const Fixed &b);
+	static Fixed const &max(const Fixed &a, const Fixed &b);
 
 private:
 	int _val;

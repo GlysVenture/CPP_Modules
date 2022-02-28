@@ -2,13 +2,13 @@
 #include "Fixed.hpp"
 
 int	main() {
-	Fixed	c(-1);
-	Fixed	d(2);
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
 
-	std::cout << c << std::endl;
-	std::cout << d << std::endl;
-	d.setRawBits(255);
-	std::cout << d << std::endl;
-	std::cout << c + d << std::endl;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 	return (0);
 }

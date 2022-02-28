@@ -98,8 +98,7 @@ Fixed Fixed::operator*(const Fixed &rhs) const {
 }
 
 Fixed Fixed::operator/(const Fixed &rhs) const {
-	Fixed	temp;
-	temp.setRawBits(this->_val / rhs._val * (int) powf(2, Fixed::bits));
+	Fixed	temp((float)this->_val / (float)rhs._val );
 	return temp;
 }
 

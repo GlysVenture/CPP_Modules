@@ -2,7 +2,7 @@ SRCS		= main.cpp Fixed.cpp
 
 OBJS		= ${SRCS:.cpp=.o}
 
-NAME		= fixed01
+NAME		= fixed02
 
 CXX			= clang++
 
