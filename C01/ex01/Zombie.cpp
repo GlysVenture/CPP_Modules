@@ -6,24 +6,37 @@
 #include <utility>
 #include "Zombie.hpp"
 
-const char Names[10][13] = {
-	"Herodotus\0",
-	"Thucydides\0",
-	"Patroclus\0",
-	"Agamemnon\0",
-	"Socrates\0",
-	"Aristotle\0",
-	"Archimedes\0",
-	"Democritus\0",
-	"Alexander\0",
-	"Demosthenes\0",
+const std::string Names[10] = {
+	"Herodotus",
+	"Thucydides",
+	"Patroclus",
+	"Agamemnon",
+	"Socrates",
+	"Aristotle",
+	"Archimedes",
+	"Democritus",
+	"Alexander",
+	"Demosthenes",
+};
+
+const std::string Titles[10] = {
+	"",
+	" the Second",
+	" the Third",
+	" the Fourth",
+	" the Fifth",
+	" the Sixth",
+	" the Seventh",
+	" the Eighth",
+	" the Ninth",
+	" the Tenth",
 };
 
 void	Zombie::announce() {
 	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie::Zombie(std::string name) : _name(std::move(name)) { }
+Zombie::Zombie(std::string name) : _name(name) { }
 
 Zombie::Zombie() { }
 
@@ -32,9 +45,9 @@ Zombie::~Zombie() {
 }
 
 void Zombie::gen_name(int ran_id) {
-	this->_name = Names[ran_id % 10];
+	this->_name = Names[ran_id % 10] + Titles[(ran_id / 10) % 10];
 }
 
 void Zombie::set_name(std::string name) {
-	this->_name = std::move(name);
+	this->_name = name;
 }

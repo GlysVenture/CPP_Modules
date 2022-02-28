@@ -23,6 +23,6 @@ private:
 
 Zombie* zombieHorde( int N, std::string name );
 
-Zombie* betterZombieHorde( int N, std::string name );
+Zombie* betterZombieHorde( int N);
 
 #endif //ZOMBIE_HPP
