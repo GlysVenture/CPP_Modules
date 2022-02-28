@@ -1,0 +1,1 @@
+add_executable(zombie_horde main.cpp ZombieHorde.cpp Zombie.cpp)
