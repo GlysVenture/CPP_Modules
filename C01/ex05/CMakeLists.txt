@@ -1,0 +1,1 @@
+add_executable(karen main.cpp Karen.cpp)
