@@ -1,8 +1,8 @@
-SRCS		= main.cpp Fixed.cpp
+SRCS		= main.cpp zombieHorde.cpp Zombie.cpp
 
 OBJS		= ${SRCS:.cpp=.o}
 
-NAME		= fixed_test
+NAME		= zombie
 
 CXX			= clang++
 

@@ -6,7 +6,7 @@ NAME		= tests
 
 CXX			= clang++
 
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -std=c++98
 
 RM			= rm -rf
 

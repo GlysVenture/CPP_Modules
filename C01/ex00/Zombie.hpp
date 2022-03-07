@@ -18,6 +18,8 @@ private:
 	std::string	_name;
 };
 
-Zombie* zombieHorde( int N, std::string name );
+Zombie	*new_zombie(std::string name);
+
+void	random_chump(std::string name);
 
 #endif //ZOMBIE_HPP

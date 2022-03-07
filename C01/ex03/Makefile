@@ -1,8 +1,8 @@
-SRCS		= main.cpp Fixed.cpp
+SRCS		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS		= ${SRCS:.cpp=.o}
 
-NAME		= fixed_test
+NAME		= violence
 
 CXX			= clang++
 

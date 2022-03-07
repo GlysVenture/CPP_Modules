@@ -1,8 +1,8 @@
-SRCS		= main.cpp Fixed.cpp
+SRCS		= main.cpp
 
 OBJS		= ${SRCS:.cpp=.o}
 
-NAME		= fixed_test
+NAME		= this_is_brain
 
 CXX			= clang++
 
