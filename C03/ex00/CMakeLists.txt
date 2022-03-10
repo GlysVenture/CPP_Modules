@@ -1,0 +1,1 @@
+add_executable(clap_trap main.cpp ClapTrap.cpp)

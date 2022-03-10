@@ -1,0 +1,1 @@
+add_executable(scav_trap main.cpp ClapTrap.cpp ScavTrap.cpp)
