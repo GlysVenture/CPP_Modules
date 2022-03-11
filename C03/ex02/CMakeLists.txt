@@ -1,0 +1,1 @@
+add_executable(frag_trap main.cpp ClapTrap.cpp FragTrap.cpp)
