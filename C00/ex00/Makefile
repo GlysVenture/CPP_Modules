@@ -1,8 +1,8 @@
-SRCS		= tests.cpp Account.cpp
+SRCS		= Megaphone.cpp
 
 OBJS		= ${SRCS:.cpp=.o}
 
-NAME		= tests
+NAME		= megaphone
 
 CXX			= clang++
 

@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Phonebook.h"
 
-int	main(int argc, char **argv)
+int	main()
 {
 	Phonebook	book;
 	std::string	buffer;
