@@ -22,8 +22,7 @@ private:
 	static void warning(  );
 	static void error(  );
 
-	static std::map<std::string, int> createMap();
-	static const std::map<std::string, int> _map;
+	static int get_id(std::string level);
 };
 
 #endif //CPP_MODULES_KAREN_H

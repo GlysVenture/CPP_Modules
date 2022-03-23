@@ -6,11 +6,12 @@ NAME		= karenFilter
 
 CXX			= clang++
 
-CFLAGS		= -Wall -Werror -Wextra -std=c++98
+CFLAGS		= -Wall -Werror -Wextra -std=c++98 -pedantic
 
 RM			= rm -rf
 
-.cpp.o:		${CXX} ${CFLAGS} -c -o $< ${<:.o=.cpp}
+.cpp.o:
+			${CXX} ${CFLAGS} -c $< -o $@
 
 all:		${NAME}
 

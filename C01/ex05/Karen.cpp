@@ -3,6 +3,8 @@
 //
 
 #include "Karen.h"
+#include "../ex06/Karen.h"
+
 #include <iostream>
 #include <map>
 
@@ -32,10 +34,7 @@ void Karen::error()
 
 void Karen::complain(std::string level)
 {
-	int i = -1;
-	if (_map.find(level) != _map.end())
-		i = _map.find(level)->second;
-	switch (i)
+	switch (get_id(level))
 	{
 		case 0:
 			debug();
@@ -51,16 +50,19 @@ void Karen::complain(std::string level)
 			break;
 		default:
 			std::cout << "Complain level invalid!" << std::endl;
-
 	}
 }
 
-std::map<std::string, int> Karen::createMap()
+int Karen::get_id(std::string level)
 {
-	std::map<std::string, int> ret;
-	ret["DEBUG"] = 0;
-	ret["INFO"] = 1;
-	ret["WARNING"] = 2;
-	ret["ERROR"] = 3;
-	return ret;
+	char levels[4][8] = {"DEBUG",
+						 "INFO",
+						 "WARNING",
+						 "ERROR"};
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == levels[i])
+			return i;
+	}
+	return (-1);
 }

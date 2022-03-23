@@ -8,7 +8,7 @@
 #include <iostream>
 #include "Contact.h"
 
-#define PH_SIZE 3
+#define PH_SIZE 8
 
 class Phonebook
 {

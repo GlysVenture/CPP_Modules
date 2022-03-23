@@ -5,8 +5,6 @@
 #include "Karen.h"
 #include <iostream>
 
-const std::map<std::string, int> Karen::_map = Karen::createMap();
-
 int main(int argc, char **argv) {
 	Karen kk;
 
