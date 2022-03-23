@@ -1,1 +1,1 @@
-add_executable(poly main.cpp)
+add_executable(poly main.cpp Animal.cpp Cat.cpp Dog.cpp)
