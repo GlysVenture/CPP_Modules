@@ -1,0 +1,1 @@
+add_executable(larves main.cpp Bureaucrat.cpp Form.cpp)
