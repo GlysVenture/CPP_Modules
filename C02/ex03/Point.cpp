@@ -18,6 +18,7 @@ std::string Point::toString() const {
 
 Point &Point::operator=(const Point &rhs)
 {
+	(void) rhs;
 	std::cerr << "Point class has const member, you can't copy assign it!" << std::endl;
 	return *this;
 }
