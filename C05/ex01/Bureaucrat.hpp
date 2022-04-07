@@ -7,6 +7,7 @@
 
 #include <exception>
 #include <iostream>
+class Form;
 
 class Bureaucrat
 {
@@ -25,6 +26,7 @@ public:
 
 	std::string getName() const;
 	int getLevel() const;
+	void	signForm(Form &form);
 	Bureaucrat &operator++(int);
 	Bureaucrat &operator--(int);
 

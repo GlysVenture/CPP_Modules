@@ -3,9 +3,11 @@
 //
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main () {
+	Form form("ORDER 66", 42, 66);
 
-	std::cout << "smth" << std::endl;
+	std::cout << form << std::endl;
 
 }

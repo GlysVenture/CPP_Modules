@@ -3,6 +3,7 @@
 //
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(): name("whatever")
 {
@@ -58,6 +59,22 @@ Bureaucrat &Bureaucrat::operator--(int)
 		throw Bureaucrat::GradeTooLowException();
 	level++;
 	return *this;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	if (form.isSigned()){
+		std::cout << name << " couldn't sign " << form.getName() << " because it was already signed" << std::endl;
+		return;
+	}
+	try
+	{
+		form.beSigned(*this);
+		std::cout << name << " signed " << form.getName() << std::endl;
+	}
+	catch (Form::GradeTooLowException &e) {
+		std::cout << name << " couldn't sign " << form.getName() << " because his level was too low" << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream  &o, Bureaucrat const &b){

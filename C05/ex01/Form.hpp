@@ -6,6 +6,7 @@
 #define CPP_MODULES_FORM_HPP
 
 #include <iostream>
+class Bureaucrat;
 
 class Form
 {
@@ -17,6 +18,15 @@ public:
 
 	Form &operator=(Form const &rhs);
 
+	class GradeTooHighException: public std::exception {};
+	class GradeTooLowException: public std::exception {};
+
+	int		getSignLevel() const;
+	int		getExecuteLevel() const;
+	bool	isSigned() const;
+	std::string	getName() const;
+	void	beSigned(Bureaucrat &larve);
+
 private:
 	std::string const _name;
 	bool _signed;
@@ -24,5 +34,6 @@ private:
 	int const _execute_level;
 };
 
+std::ostream &operator<<(std::ostream  &o, Form const &b);
 
 #endif //CPP_MODULES_FORM_HPP
