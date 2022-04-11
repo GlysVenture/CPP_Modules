@@ -1,0 +1,1 @@
+add_executable(exec main.cpp Bureaucrat.cpp Form.cpp)

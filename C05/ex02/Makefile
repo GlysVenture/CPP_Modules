@@ -2,7 +2,7 @@ SRCS		= main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS		= ${SRCS:.cpp=.o}
 
-NAME		= buro
+NAME		= exec
 
 CXX			= c++
 
