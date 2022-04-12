@@ -36,5 +36,14 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &name,
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
+	srand(time(NULL));
+	std::cout << "brrr... brrrrrr... brrbrr...\n"
+				 "brrrrrr...\n"
+				 "BRRRRR....." << std::endl;
+	if (rand() % 2){
+		std::cout << _target << " robotomised successfully!" << std::endl;
+	} else {
+		std::cout << _target << " robotomisation failed..." << std::endl;
+	}
 	(void) executor;
 }
