@@ -1,4 +1,4 @@
-SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS		= main.cpp ClapTrap.cpp FragTrap.cpp
 
 OBJS		= ${SRCS:.cpp=.o}
 
