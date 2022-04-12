@@ -27,6 +27,7 @@ public:
 	std::string getName() const;
 	int getLevel() const;
 	void	signForm(Form &form);
+	void	executeForm(Form const & form) const;
 	Bureaucrat &operator++(int);
 	Bureaucrat &operator--(int);
 

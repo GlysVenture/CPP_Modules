@@ -5,6 +5,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
+
 Bureaucrat::Bureaucrat(): name("whatever")
 {
 	this->level = 150;
@@ -74,6 +75,31 @@ void Bureaucrat::signForm(Form &form)
 	}
 	catch (Form::GradeTooLowException &e) {
 		std::cout << name << " couldn't sign " << form.getName() << " because his level was too low" << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(const Form &form) const
+{
+	try
+	{
+		form.doExecute(*this);
+		std::cout << this->getName() << " executed form: "
+				  << form.getName() << std::endl;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << this->getName() << " couldn't execute form: "
+			<< form.getName() << " because of too low level" << std::endl;
+	}
+	catch (Form::FormNotSignedException &e)
+	{
+		std::cout << this->getName() << " couldn't execute form: "
+			<< form.getName() << " because it wasn't signed" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << this->getName() << " couldn't execute form: "
+			<< form.getName() << " because of: " << e.what() << std::endl;
 	}
 }
 

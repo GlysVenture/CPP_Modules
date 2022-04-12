@@ -72,6 +72,15 @@ void Form::beSigned(Bureaucrat &larve)
 	}
 }
 
+void Form::doExecute(const Bureaucrat &executor) const
+{
+	if (executor.getLevel() > _execute_level)
+		throw GradeTooLowException();
+	if (!this->_signed)
+		throw FormNotSignedException();
+	this->execute(executor);
+}
+
 std::ostream &operator<<(std::ostream  &o, Form const &b){
 	o << b.getName() << ", form signed: " << b.isSigned()
 	<< "\nsign_level: " << b.getSignLevel()
