@@ -1,0 +1,1 @@
+add_executable(base_class main.cpp Classes.cpp)
