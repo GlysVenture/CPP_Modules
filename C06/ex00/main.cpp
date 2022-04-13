@@ -70,8 +70,10 @@ int main(int argc, char **argv){
 		std::cout << "int: " << integer << "\n";
 	else
 		std::cout << "int: impossible\n";
-	std::cout << "float: " << floating << "f\n"
-	<< "double: " << doub << std::endl;
+	std::string add;
+	if(remainder(floating,1) == 0.0){ add = ".0";}
+	std::cout << "float: " << floating << add << "f\n"
+	<< "double: " << doub << add << std::endl;
 
 }
 
