@@ -30,7 +30,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &name,
-											   const std::string &target): Form(name, 72, 45)
+											   const std::string &target): Form(name, 25, 5)
 {
 	_target = target;
 }
