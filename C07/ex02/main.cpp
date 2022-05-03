@@ -9,7 +9,7 @@ int main(){
 	Array<int> malibu(5);
 	Array<int> amaretto(malibu);
 
-	malibu = malibu;
+	malibu = amaretto;
 
 	std::cout << "malibu 0: " << malibu[0] << std::endl;
 	std::cout << "malibu 2: " << malibu[2] << std::endl;
