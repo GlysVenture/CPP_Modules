@@ -8,7 +8,7 @@
 #include <stack>
 #include <vector>
 
-template<class T, class Container = std::vector<T> >
+template<class T, class Container = std::deque<T> >
 class MutantStack: public std::stack<T, Container>
 {
 public:
@@ -16,7 +16,6 @@ public:
 
 	MutantStack() { }
 	MutantStack(const MutantStack<T, Container>& inst) { *this = inst; }
-	explicit MutantStack( const Container& cont ): std::stack<T, Container>(cont) { }
 	~MutantStack() { };
 
 	MutantStack<T, Container> &operator=(const MutantStack<T, Container> & rhs){

@@ -5,6 +5,7 @@
 #include <stack>
 #include <vector>
 #include <iostream>
+#include <list>
 #include "MutantStack.hpp"
 
 int main()
@@ -29,6 +30,20 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
-	//std::stack<int> s(mstack); todo ???
+	std::stack<int> s(mstack); //todo ???
+	//List tests
+	std::cout << "List tests:" << std::endl;
+	MutantStack<int, std::list<int> > m_list;
+	m_list.push(1);
+	m_list.push(2);
+	std::cout << "top: " << m_list.top() << std::endl;
+	m_list.pop();
+	std::cout << "size: " << m_list.size() << std::endl;
+
+	MutantStack<int, std::list<int> > h_list;
+	h_list = m_list;
+	std::cout << "top: " << h_list.top() << std::endl;
+	h_list.pop();
+	std::cout << "size: " << h_list.size() << std::endl;
 	return 0;
 }
